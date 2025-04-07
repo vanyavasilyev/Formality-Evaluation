@@ -20,6 +20,18 @@ All the datasets have formality data in form of either score or labels. All thes
 
 First model was taken from https://arxiv.org/pdf/2204.08975. It is a Neural-Network-based model. The second one is also based on a NN. I found it from https://huggingface.co/. However, it is still possible to evalute non-DL models. As multiple papers (https://web.ntpu.edu.tw/~myday/doc/IRI2022/IEEE_IRI2022_Proceedings/pdfs/IRI2022-2biJIxjybiQ3DOmA6IkB2x/660300a001/660300a001.pdf, https://web.ntpu.edu.tw/~myday/doc/IRI2022/IEEE_IRI2022_Proceedings/pdfs/IRI2022-2biJIxjybiQ3DOmA6IkB2x/660300a001/660300a001.pdf) claim that DL models perform better, I decided to compare such models.
 
+The names of the models are: "s-nlp/xlmr_formality_classifier" and "Harshveer/autonlp-formality_scoring_2-32597818" 
+
 ## Result
 
-My laptop did not allow me to validate models on the whole datasets. The results on small samples are 
+My laptop did not allow me to validate models on the whole datasets. The results on small samples for the first model are:
+* Pavlick: macro f1 = 0.67, correlation = 0.80
+* German: macro f1 = 0.58, correlation = 0.85
+* labeled: macro f1 = 0.65, correlation = 0.68
+
+For the second one I got:
+* Pavlick: macro f1 = 0.80, correlation = 0.83
+* German: macro f1 = 0.83, correlation = 0.86
+* labeled: macro f1 = 0.88, correlation = 0.86
+
+The first one seems to work worse.
