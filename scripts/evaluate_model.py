@@ -52,7 +52,7 @@ def print_evaluation(model, tokenizer, df: pd.DataFrame, method: str = "both", s
             exp = np.exp(logit)
             predictions.append(float(exp / (1 + exp)))
         else:
-            predictions.append(logits.softmax(dim=1)[:,0].item())
+            predictions.append(output.logits.softmax(dim=1)[:,0].item())
     print("Evaluation of model:")
     print(predictions)
     if method in ["classification", "both"]:
